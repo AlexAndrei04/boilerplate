@@ -1,0 +1,41 @@
+// ==========================================================================
+// Utilizado para: 
+// Desarrollado por: 
+// Basado en la arquitectura ITCSS 
+// ==========================================================================
+
+
+// ==========================================================================
+// Media Queries
+// ==========================================================================
+// Ancho de teléfonos
+// 300px - 768px
+@mixin smartphone {
+  @media (min-width: #{$s-mobile-width}) and (max-width: #{$s-tablet-width - 1px}) {
+    @content;
+  }
+}
+
+// Ancho de Tabletas
+// 769px - 991px
+@mixin tablet {
+  @media (min-width: #{$s-tablet-width}) and (max-width: #{$s-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+// Ancho de Laptops
+// 992px -1199px
+@mixin laptop {
+  @media (min-width: #{$s-desktop-width}) and (max-width: #{$s-television-width - 1px}) {
+    @content;
+  }
+}
+
+// Ancho de Televisiones
+// 1200 >
+@mixin television {
+  @media (min-width: #{$s-television-width}) {
+    @content;
+  }
+}

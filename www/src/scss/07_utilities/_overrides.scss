@@ -1,0 +1,57 @@
+// ==========================================================================
+// Utilizado para: 
+// Desarrollado por: 
+// Basado en la arquitectura ITCSS 
+// ==========================================================================
+
+.is-clearfix {
+  clear: both;
+}
+
+.is-not-list {
+  list-style: none;
+  padding: 0;
+}
+
+.is-mayus {
+  text-transform: uppercase;
+}
+
+// ==========================================================================
+// Agrega los rellenos y margenés de estado
+// ==========================================================================
+@each $position in (top, right, bottom, left) {
+  @for $size from 1 through 5 {
+    @each $type in (margin, padding) {
+      .is-#{$type}-#{$position}-#{$size} {
+        #{$type}-#{$position}: #{$size}em;
+      }
+    }
+  }
+}
+
+// ==========================================================================
+// Accesibilidad web
+// ==========================================================================
+a:focus,
+input:focus,
+button:focus {
+  border-radius: 2px;
+  box-shadow: none;
+  outline: 2px solid $color-focus !important;
+  outline-offset: 0 !important;
+  transition: all 0s !important;
+  z-index: 15;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+select:-webkit-autofill,
+select:-webkit-autofill:hover {
+  background-color: $color-focus;
+  box-shadow: inset 0 80px $color-focus !important;
+  font-weight: normal;
+  -webkit-text-fill-color: $color-focus;
+}

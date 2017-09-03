@@ -1,0 +1,90 @@
+// ==========================================================================
+// Utilizado para: 
+// Desarrollado por: 
+// Basado en la arquitectura ITCSS 
+// ==========================================================================
+
+* {
+  &::selection {
+    background-color: $s-selection-background;
+    color: $s-selection-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: map-get($s-scrollbar, track-background);
+    box-shadow: map-get($s-scrollbar, track-box-shadow);
+  }
+
+  &:-webkit-scrollbar {
+    height: map-get($s-scrollbar, height);
+    width: map-get($s-scrollbar, width);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($s-scrollbar, thumb-background);
+    border-radius: map-get($s-scrollbar, thumb-border-radius);
+  }
+}
+
+body {
+  font-family: map-get($s-font, secondary);
+  font-size: map-get($s-font, size);
+}
+
+@each $tag, $heading-size in (
+  h1: 3em,
+  h2: 2.5em,
+  h3: 2em,
+  h4: 1.8em,
+  h5: 1.6em,
+  h6: 1.4em
+) {
+  #{$tag} {
+    color: $s-heading-color;
+    font-family: map-get($s-font, secondary);
+    font-size: #{$heading-size};
+    font-weight: 600;
+    line-height: 1.5;
+  }
+}
+
+a {
+  color: $s-link;
+  
+  &:active,
+  &:focus,
+  &:hover,
+  &:active:focus {
+    color: $s-link-hover;
+  }
+}
+/*
+[type=submit],
+[type=button] {}
+
+[type=button]:hover,
+[type=submit]:hover {}
+
+[type=submit]:active,
+[type=button]:active {}
+
+[type=date],
+[type=datetime-local],
+[type=email],
+[type=number],
+[type=password],
+[type=search],
+[type=tel],
+[type=text],
+[type=url] {}
+
+[type="file"]:focus,
+[type="radio"]:focus,
+[type="checkbox"]:focus {}
+
+[type=submit]:focus,
+[type=button]:focus {}
+
+textarea {}
+
+select {} */

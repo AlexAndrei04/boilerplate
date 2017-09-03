@@ -1,0 +1,106 @@
+// ==========================================================================
+// Utilizado para: 
+// Desarrollado por: Alex Andrei // AlexAndrei04
+// Basado en la arquitectura ITCSS 
+// ==========================================================================
+
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+// ==========================================================================
+// Fuentes
+// ==========================================================================
+$s-font: (
+  size: 16px,
+  primary: ('Oswald', sans-serif),
+  secondary: ('Roboto', sans-serif)
+);
+
+
+// ==========================================================================
+// Colores y escala de grises
+// ==========================================================================
+$s-color-scheme: (
+  s-black: (
+    dark: #0B0B0E,
+    base: #1E1E24,
+    light: #323237,
+    bright: #98989B,
+  ),
+  s-red: (
+    dark: #5D0D08,
+    base: #92140C,
+    light: #9B2922,
+    bright: #CD9490,
+  ),
+  s-cream: (
+    dark: #997C5C,
+    base: #FFCF99,
+    light: #FFE0BE,
+    bright: #FFEDD9,
+  ),
+  s-blue: (
+    dark: #0B1330,
+    base: #111D4A,
+    light: #26315A,
+    bright: #515A7B,
+  ),
+  s-grayscale: (
+    dark: #5c5c5c,
+    base: #848484,
+    light: #f2f2f2,
+    bright: #fff,
+  ),
+  s-social: (
+    facebook: #3b5998,
+    twitter: #55acee,
+    google-plus: #dd4b39,
+    youtube: #b00,
+    pinterest: #cb2027,
+    periscope: #35a3c6,
+    linkedin: #125688,
+    tumblr: #32506d,
+    whatsapp: #4dc247
+  )
+);
+
+$s-scrollbar: (
+  height: .8em, // .8em
+  track-background: map-get(map-get($s-color-scheme, s-grayscale), base),
+  track-box-shadow: map-get(map-get($s-color-scheme, s-grayscale), base),
+  thumb-background: map-get(map-get($s-color-scheme, s-grayscale), bright),
+  thumb-border-radius: 0, // 0
+  width: .8em // .8em
+);
+
+// ==========================================================================
+// Tokens
+// ==========================================================================
+$s-color-primary: map-get(map-get($s-color-scheme, s-blue), bright);
+$s-color-secondary: map-get(map-get($s-color-scheme, s-red), bright);
+$s-color-black: #000;
+$color-white: map-get(map-get($s-color-scheme, s-grayscale), bright);
+$color-focus: map-get(map-get($s-color-scheme, s-red), base); // Cuestión de accesibilidad
+$transparent: transparent;
+$s-link: map-get(map-get($s-color-scheme, s-red), base);
+$s-link-hover: map-get(map-get($s-color-scheme, s-grayscale), dark);
+$s-selection-background: map-get(map-get($s-color-scheme, s-cream), bright);
+$s-selection-color: map-get(map-get($s-color-scheme, s-grayscale), dark);
+$s-heading-color: map-get(map-get($s-color-scheme, s-grayscale), dark);
+$s-headings: h1, h2, h3, h4, h5, h6;
+
+
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+$s-mobile-width: 300px;
+$s-tablet-width: 769px;
+$s-desktop-width: 992px;
+$s-television-width: 1200px;
+
+
+// ==========================================================================
+// Paths
+// ==========================================================================
+// $s-system-image: / assets / images;
